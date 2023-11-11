@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: kibe_pasal_production
-  username: kibe_pasal
-  password: <%= ENV["KIBE_PASAL_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
