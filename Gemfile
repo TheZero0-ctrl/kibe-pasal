@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -17,6 +19,11 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'pry'
+  gem 'rubocop', '~> 1.57', '>= 1.57.2'
+  gem 'rubocop-capybara', '~> 2.19'
+  gem 'rubocop-performance', '~> 1.19', '>= 1.19.1'
+  gem 'rubocop-rails', '~> 2.22', '>= 2.22.1'
+  gem 'rubocop-rspec', '~> 2.25'
 end
 
 group :development do
