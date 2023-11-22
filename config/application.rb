@@ -40,7 +40,6 @@ module KibePasal
         :rspec,
         fixtures: false,
         view_spec: false,
-        helper_spec: false,
         routing_spec: false
       )
     end

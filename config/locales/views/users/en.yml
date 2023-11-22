@@ -1,0 +1,7 @@
+en:
+  users:
+    new:
+      title: Sign up for Kibe Pasal
+      sign_up: Sign up!
+    create:
+      welcome: "Welcome to Kibe Pasal, %{name}"

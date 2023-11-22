@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.error-input {
+  border: 1px solid #dc2626;
+}
