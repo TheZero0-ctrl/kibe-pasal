@@ -38,7 +38,11 @@
               <%= link_to t(".profile"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".my_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".saved_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
-              <%= link_to t(".logout"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
+              <%= link_to t(".logout"), 
+                logout_path, 
+                class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500",
+                data: { turbo_method: :delete }
+              %>
             </div>
           </div>
         <% else %>
