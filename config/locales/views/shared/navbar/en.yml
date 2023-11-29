@@ -1,0 +1,11 @@
+en:
+  shared:
+    navbar:
+      create_add: Create Add
+      message: Messages
+      sign_up: Sign up
+      login: Login
+      profile: Profile
+      my_adds: My Adds
+      saved_adds: Saved Adds
+      logout: Log out
