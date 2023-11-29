@@ -35,6 +35,11 @@ RSpec.describe UsersController, type: :request do
         expect(response).to render_template('feed/show')
         expect(flash[:success]).to be_present
       end
+
+      it 'create app sessions cookies' do
+        post sign_up_path, params: valid_params
+        expect(cookies[:app_sessions]).to be_present
+      end
     end
 
     context 'with invalid parameters' do
