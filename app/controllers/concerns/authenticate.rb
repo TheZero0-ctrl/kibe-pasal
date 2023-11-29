@@ -25,7 +25,7 @@ module Authenticate
 
   def log_in(app_session)
     cookies.encrypted.permanent[:app_sessions] = {
-      value: app_session
+      value: app_session.to_h
     }
   end
 
@@ -50,7 +50,7 @@ module Authenticate
 
     user = User.find(user_id)
 
-    user.authenticate_app_sesion(app_session, token)
+    user.authenticate_app_session(app_session, token)
   rescue NoMatchingPatternError, ActiveRecord::RecordNotFound
     nil
   end

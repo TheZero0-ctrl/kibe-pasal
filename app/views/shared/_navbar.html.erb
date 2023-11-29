@@ -1,0 +1,51 @@
+<header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+  <nav 
+    class="mt-6 relative max-w-[85rem] w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto"
+    aria-label="Global"
+    data-controller="navbar"
+  >
+    <div class="flex items-center justify-between">
+      <%= link_to 'Kibe Pasal', root_path, class: "flex-none text-xl font-semibold" %>
+      <div class="md:hidden">
+        <button 
+          aria-controls="navbar-collapse-with-animation"
+          aria-label="Toggle navigation"
+          type="button"
+          class="hs-collapse-toggle w-8 h-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" 
+          data-navbar-target="burger"
+          data-action="navbar#toggle"
+        >
+          <svg class="hs-collapse-open:hidden flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+          <svg class="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div 
+      id="navbar-collapse-with-animation" 
+      class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+      data-navbar-target="menu"
+    >
+      <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+        <%= link_to t(".create_add"), "#", class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" %>
+        <%= link_to t(".message"), "#", class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" if logged_in? %>
+        <% if logged_in? %>
+          <div class="hs-dropdown md:py-4">
+            <%= link_to  "#", class: "flex peer items-center w-full text-gray-500 hover:text-gray-400 font-medium" do %>
+              <%= Current.user.name %>
+              <svg class="ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <% end %>
+            <div class="hidden peer-hover:block hover:block transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms]  md:w-48 z-10 bg-white md:shadow-md rounded-lg p-2 absolute top-[60%] md:border left-[85%]">
+              <%= link_to t(".profile"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
+              <%= link_to t(".my_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
+              <%= link_to t(".saved_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
+              <%= link_to t(".logout"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to t(".sign_up"), sign_up_path, class: "flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 md:my-6 md:ps-6" %>
+          <%= link_to t(".log_in"), login_path, class: "flex items-center font-medium text-gray-500 hover:text-blue-600 md:my-2 md:ps-2" %>
+        <% end %>
+      </div>
+    </div>
+  </navaria-label>
+</header>
