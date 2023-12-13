@@ -1,5 +1,5 @@
   <% flash.each do |level, message| %>
-    <div class="<%= flash_class(level) %>" data-turbo-cache="false">
+    <div class="<%= flash_class(level) %> notification" data-turbo-cache="false">
       <span class="block sm:inline"><%= message %></span>
     </div>
   <% end %>
