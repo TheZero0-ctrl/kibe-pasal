@@ -11,7 +11,7 @@
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
           type="button"
-          class="hs-collapse-toggle w-8 h-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" 
+          class="navbar-burger hs-collapse-toggle w-8 h-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" 
           data-navbar-target="burger"
           data-action="navbar#toggle"
         >
@@ -34,7 +34,7 @@
               <%= Current.user.name %>
               <svg class="ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             <% end %>
-            <div class="hidden peer-hover:block hover:block transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms]  md:w-48 z-10 bg-white md:shadow-md rounded-lg p-2 absolute top-[60%] md:border left-[85%]">
+            <div class="hidden navbar-dropdown peer-hover:block hover:block transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms]  md:w-48 z-10 bg-white md:shadow-md rounded-lg p-2 absolute top-[60%] md:border left-[85%]">
               <%= link_to t(".profile"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".my_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".saved_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
