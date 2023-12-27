@@ -1,0 +1,47 @@
+<% content_for :title, Current.user.name %>
+<%= turbo_frame_tag :user_details do %>
+  <div class="max-w-md relative flex flex-col p-4 rounded-md text-black bg-white m-auto mt-10 md:mt-20">
+    <div class="text-2xl font-bold mb-2 text-[#1e0e4b] text-center"><%= t(".your_details") %></div>
+      <%= form_with(
+        model: @user,
+        url: profile_path,
+        class: "flex flex-col gap-3"
+      ) do |form| %>
+      <%= render "shared/flashes" if turbo_frame_request? && flash.present? %>
+      <div class="block relative"> 
+        <%= form.label :email, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+        <%= form.email_field :email, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+      </div>
+      <div class="block relative"> 
+        <%= form.label :name, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+        <%= form.text_field :name, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+      </div>
+      <%= form.submit t(".save_profile"), class: "bg-[#7747ff] w-max m-auto px-6 py-2 rounded text-white text-sm font-normal" %>
+    <% end %>
+  </div>
+  <%= turbo_stream.update :current_user_name do %>
+    <%= Current.user.name %>
+  <% end %>
+<% end %>
+
+<%= turbo_frame_tag :change_password do %>
+  <div class="max-w-md relative flex flex-col p-4 rounded-md text-black bg-white m-auto mt-10 md:mt-10">
+    <div class="text-2xl font-bold mb-2 text-[#1e0e4b] text-center"><%= t(".change_password") %></div>
+      <%= form_with(
+        model: @user,
+        url: users_change_password_path,
+        class: "flex flex-col gap-3"
+      ) do |form| %>
+      <%= render "shared/flashes" if turbo_frame_request? && flash.present? %>
+      <div class="block relative"> 
+        <%= form.label :current_password, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+        <%= form.password_field :current_password, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+      </div>
+      <div class="block relative"> 
+        <%= form.label :new_password, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+        <%= form.password_field :password, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+      </div>
+      <%= form.submit t(".change_password_button"), class: "bg-[#7747ff] w-max m-auto px-6 py-2 rounded text-white text-sm font-normal" %>
+    <% end %>
+  </div>
+<% end %>

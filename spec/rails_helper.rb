@@ -4,9 +4,10 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require_relative 'support/factory_bot'
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'capybara/rails'
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -33,7 +34,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{Rails.root.join('spec/fixtures')}"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -62,6 +63,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include AuthenticationHelper, type: :request
+  config.include AuthenticationHelper, type: :system
 end
 
 Shoulda::Matchers.configure do |config|

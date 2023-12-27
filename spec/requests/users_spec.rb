@@ -56,7 +56,26 @@ RSpec.describe UsersController, type: :request do
       it 'renders the new template with unprocessable_entity status' do
         post sign_up_path, params: invalid_params
         expect(response).to render_template(:new)
-        expect(response.status).to eq(422)
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
+  end
+
+  describe 'PATCH #update' do
+    context 'with valid parameters' do
+      let(:user) { create(:user) }
+      let(:valid_params) do
+        { user: { name: 'updated name' } }
+      end
+
+      before do
+        log_in user
+      end
+
+      it 'update user' do
+        patch profile_path, params: valid_params
+        expect(response).to redirect_to(profile_path)
+        expect(user.reload.name).to eq('updated name')
       end
     end
   end

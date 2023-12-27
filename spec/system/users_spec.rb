@@ -46,4 +46,14 @@ RSpec.describe 'Users', type: :system do
     assert_selector '.notification', text: I18n.t('sessions.create.success')
     assert_selector '.navbar-dropdown', visible: false
   end
+
+  it 'can update user name' do
+    system_login(user)
+    visit profile_path
+    fill_in User.human_attribute_name(:name), with: 'Updated name'
+    click_button I18n.t('users.show.save_profile')
+
+    expect(page).to have_selector('form .notification', text: I18n.t('users.update.success'))
+    expect(page).to have_selector('#current_user_name', text: 'Updated name')
+  end
 end

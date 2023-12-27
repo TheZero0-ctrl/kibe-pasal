@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       email: login_params[:email],
       password: login_params[:password]
     )
-
     if @app_session
       log_in(@app_session)
       flash[:success] = t('.success')
