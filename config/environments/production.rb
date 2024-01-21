@@ -90,4 +90,12 @@ Rails.application.configure do
     host: 'https://kibe-pasal.onrender.com',
     protocol: 'https'
   }
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    user_name: 'apikey',
+    password: Rails.application.credentials.sendgrid_api_key,
+    authentication: :login
+  }
 end
