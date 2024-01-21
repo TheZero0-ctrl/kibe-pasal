@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include PasswordReset
+
   has_many :memberships, dependent: :destroy
   has_many :organizations, through: :memberships
   has_many :app_sessions, dependent: :destroy

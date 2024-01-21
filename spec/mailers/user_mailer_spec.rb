@@ -9,7 +9,10 @@ RSpec.describe UserMailer, type: :mailer do
 
   describe 'password reset' do
     it 'sends a password reset email' do
-      email = described_class.with(user: user).password_reset.deliver_now
+      email = described_class
+              .with(user: user)
+              .password_reset('reset_id')
+              .deliver_now
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
 

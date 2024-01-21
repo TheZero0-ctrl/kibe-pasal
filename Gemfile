@@ -21,6 +21,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
   gem 'pry'
   gem 'rails-controller-testing'
   gem 'rubocop', '~> 1.57', '>= 1.57.2'
@@ -28,6 +29,7 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.19', '>= 1.19.1'
   gem 'rubocop-rails', '~> 2.22', '>= 2.22.1'
   gem 'rubocop-rspec', '~> 2.25'
+  gem 'timecop', '~> 0.9.5'
 end
 
 group :development do
