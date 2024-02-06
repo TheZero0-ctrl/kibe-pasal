@@ -26,7 +26,7 @@
       data-navbar-target="menu"
     >
       <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
-        <%= link_to t(".create_add"), "#", class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" %>
+        <%= link_to t(".create_add"), new_listing_path, class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" %>
         <%= link_to t(".message"), "#", class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" if logged_in? %>
         <% if logged_in? %>
           <div class="hs-dropdown md:py-4">
