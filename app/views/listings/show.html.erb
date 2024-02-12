@@ -42,6 +42,14 @@
               <%= "#{@listing.price} NRS" %>
             </dd>
           </dl>
+          <dl>
+            <dt class="text-gray-600">
+              <%= Listing.human_attribute_name(:condition) %>
+            </dt>
+            <dd class="font-semibold text-lg">
+              <%= @listing.human_enum_value(:condition) %>
+            </dd>
+          </dl>
         </div>
       </div>
     </div>

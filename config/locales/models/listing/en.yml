@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      listing:
+        conditions:
+          brand_new: Brand New
+          like_new: Like New
+          used: Used
+          not_working: Not Working

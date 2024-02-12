@@ -16,4 +16,8 @@
       </div>
     </div>
   </div>
+  <div class="block relative"> 
+    <%= form.label :condition, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+    <%= form.select :condition, Listing.human_enum_options(:condition), {}, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+  </div>
 

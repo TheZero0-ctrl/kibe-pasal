@@ -13,7 +13,8 @@ RSpec.describe 'ListingsController', type: :request do
       {
         listing: {
           title: Faker::Commerce.product_name,
-          price: Faker::Commerce.price.floor
+          price: Faker::Commerce.price.floor,
+          condition: 'brand_new'
         }
       }
     end
