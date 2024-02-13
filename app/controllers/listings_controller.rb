@@ -52,7 +52,8 @@ class ListingsController < ApplicationController
     params.require(:listing).permit(
       :title,
       :price,
-      :condition
+      :condition,
+      tags: []
     )
   end
 

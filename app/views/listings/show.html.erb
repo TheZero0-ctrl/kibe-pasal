@@ -8,6 +8,7 @@
         </h1>
         <%= link_to t(".edit"), edit_listing_path(@listing), class: "text-blue-500 ml-3" %>
       </div>
+      <%= render "tags", listing: @listing %>
 
       <div class="grid grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-2 gap-4">
         <div class="bg-white rounded-md shadow-md p-5 mt-6">

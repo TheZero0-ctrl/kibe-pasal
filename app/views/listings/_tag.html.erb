@@ -1,0 +1,14 @@
+<% form = local_assigns[:form] %>
+<ui-tag 
+  class="control tags bg-gray-200 p-2 rounded-md ml-2"
+  data-controller="remove-element">
+  <%= tag.span class: "tag" do %>
+    #<%= value %>
+  <% end %>
+  <% if form.present? %>
+    <%= form.fields_for(:tags) do |fields| %>
+      <%= fields.hidden_field nil, id: nil, value: value %>
+    <% end %>
+    <a class="tag is-delete cursor-pointer text-red-500", data-action="remove-element#remove">x</a>
+  <% end %>
+</ui-tag>
