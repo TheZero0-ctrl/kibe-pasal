@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Listing < ApplicationRecord
+  include HasAddress
+  include PermittedAttributes
+
   belongs_to :creator, class_name: 'User'
   belongs_to :organization
 

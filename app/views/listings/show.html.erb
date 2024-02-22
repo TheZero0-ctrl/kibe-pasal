@@ -34,23 +34,35 @@
           </div>
         </div>
 
-        <div class="bg-white rounded-md shadow-md p-5 mt-6">
-          <dl>
-            <dt class="text-gray-600">
-              <%= Listing.human_attribute_name(:price) %>
-            </dt>
-            <dd class="font-semibold text-lg">
-              <%= "#{@listing.price} NRS" %>
-            </dd>
-          </dl>
-          <dl>
-            <dt class="text-gray-600">
-              <%= Listing.human_attribute_name(:condition) %>
-            </dt>
-            <dd class="font-semibold text-lg">
-              <%= @listing.human_enum_value(:condition) %>
-            </dd>
-          </dl>
+        <div class="bg-white rounded-md shadow-md p-5 mt-6 flex justify-between">
+          <div>
+            <dl>
+              <dt class="text-gray-600">
+                <%= Listing.human_attribute_name(:price) %>
+              </dt>
+              <dd class="font-semibold text-lg">
+                <%= "#{@listing.price} NRS" %>
+              </dd>
+            </dl>
+            <dl>
+              <dt class="text-gray-600">
+                <%= Listing.human_attribute_name(:condition) %>
+              </dt>
+              <dd class="font-semibold text-lg">
+                <%= @listing.human_enum_value(:condition) %>
+              </dd>
+            </dl>
+          </div>
+          <div>
+            <dl>
+              <dt class="text-gray-600">
+                <%= t(".location") %>
+              </dt>
+              <dd class="font-semibold text-lg">
+                <%= @listing.address.redacted %>
+              </dd>
+            </dl>
+          </div>
         </div>
       </div>
     </div>

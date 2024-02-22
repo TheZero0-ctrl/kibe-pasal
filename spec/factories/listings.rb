@@ -5,5 +5,6 @@ FactoryBot.define do
     title { Faker::Commerce.product_name }
     price { Faker::Commerce.price.floor }
     condition { Listing.conditions.values.sample }
+    tags { %w[Faker::Commerce.department(max: 1] }
   end
 end

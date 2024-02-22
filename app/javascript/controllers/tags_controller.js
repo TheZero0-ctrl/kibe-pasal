@@ -13,5 +13,6 @@ export default class extends Controller {
     this.containerTarget.insertAdjacentHTML(
       "beforeend", templateHtml
     )
+    this.inputTarget.value = ""
   }
 }

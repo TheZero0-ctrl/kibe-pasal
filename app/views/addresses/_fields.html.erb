@@ -1,0 +1,30 @@
+<%= form.fields_for :address, form.object.address do |fields| %>
+  <div class="block relative">
+    <%= fields.label :line_1, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+    <%= fields.text_field :line_1, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+  </div>
+
+  <div class="block relative">
+    <%= fields.label :line_2, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+    <%= fields.text_field :line_2, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+  </div>
+
+  <div class="block relative">
+      <%= fields.label :city, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+      <%= fields.text_field :city, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+  </div>
+
+  <div class="block relative">
+    <%= fields.label :postcode, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+    <%= fields.text_field :postcode, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
+  </div>
+
+  <div class="block relative">
+    <%= fields.label :country, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+    <%= fields.select :country,
+      options_for_select(IsoCountryCodes.for_select, "NP"),
+      {},
+      class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0",
+      disabled: true %>
+  </div>
+<% end %>

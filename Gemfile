@@ -7,6 +7,7 @@ ruby '3.2.2'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'iso_country_codes', '~> 0.7.8'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'

@@ -23,4 +23,8 @@
   <div class="block relative">
     <%= render "tags_field", form: form %>
   </div>
+  <div class="field">
+    <%= form.label :address, class: "block text-gray-700 cursor-text text-md leading-[140%] font-normal mb-2" %>
+    <%= render "addresses/fields", form: form %>
+  </div>
 

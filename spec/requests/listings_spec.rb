@@ -14,6 +14,7 @@ RSpec.describe 'ListingsController', type: :request do
         listing: {
           title: Faker::Commerce.product_name,
           price: Faker::Commerce.price.floor,
+          tags: %w[Electronics],
           condition: 'brand_new'
         }
       }
