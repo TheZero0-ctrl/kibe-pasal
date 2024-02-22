@@ -7,6 +7,8 @@ class Listing < ApplicationRecord
   belongs_to :creator, class_name: 'User'
   belongs_to :organization
 
+  scope :feed, -> { order(created_at: :desc).includes(:address) }
+
   enum condition: {
     brand_new: 'brand_new',
     like_new: 'like_new',

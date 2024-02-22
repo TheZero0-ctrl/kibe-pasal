@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   end
 
   resources :listings, except: :index
+  resource :my_listings, only: :show
 end

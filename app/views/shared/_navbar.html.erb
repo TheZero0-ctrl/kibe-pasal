@@ -38,7 +38,7 @@
             <% end %>
             <div class="hidden navbar-dropdown peer-hover:block hover:block transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms]  md:w-48 z-10 bg-white md:shadow-md rounded-lg p-2 absolute top-[60%] md:border left-[85%]">
               <%= link_to t(".profile"), profile_path, class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
-              <%= link_to t(".my_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
+              <%= link_to t(".my_adds"), my_listings_path, class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".saved_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".logout"), 
                 logout_path, 

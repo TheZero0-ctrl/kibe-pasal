@@ -15,7 +15,8 @@ RSpec.describe 'ListingsController', type: :request do
           title: Faker::Commerce.product_name,
           price: Faker::Commerce.price.floor,
           tags: %w[Electronics],
-          condition: 'brand_new'
+          condition: 'brand_new',
+          address_attributes: build(:address).attributes
         }
       }
     end
@@ -81,7 +82,7 @@ RSpec.describe 'ListingsController', type: :request do
         delete listing_path(listing)
       end.to change(Listing, :count).by(-1)
 
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(my_listings_path)
     end
   end
 end

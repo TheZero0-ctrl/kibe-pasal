@@ -1,0 +1,24 @@
+<div class="relative flex w-80 flex-col rounded-xl bg-clip-border text-gray-700 shadow-md bg-gray-50">
+  <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+  </div>
+  <div class="p-6">
+    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <%= listing.title %>
+    </h5>
+    <div class="flex gap-0.5 flex-wrap">
+      <%= render "listings/tags", listing: listing %>
+    </div>
+  </div>
+  <div class="p-6 pt-0">
+    <div class="mb-1">NRS <%= listing.price %></div>
+    <span class="bg-blue-200 rounded-md p-2">
+      <%= listing.human_enum_value(:condition) %>
+    </span>
+  </div>
+  <div class="flex items-center text-sm justify-end p-2">
+    <%= svg("location", class: "w-4 h-4", fill: "#444") %>
+    <span>
+      <%= listing.address.redacted %>
+    </span>
+  </div>
+</div>
