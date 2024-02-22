@@ -1,0 +1,18 @@
+<%= content_for :title, t(".title") %> 
+<div class="max-w-md relative flex flex-col p-4 rounded-md text-black bg-white m-auto mt-4">
+  <%= form_with(
+    model: @listing,
+    class: "flex flex-col gap-3",
+    id: "new_listing_form",
+  ) do |form| %>
+    <%= render "form", form: form %>
+  <% end %>
+  <div class="mt-8 cursor-pointer">
+    <%= submit_tag(
+      t(".publish"),
+      form: "new_listing_form",
+      class: "bg-[#7747ff] w-max m-auto px-6 py-2 rounded text-white text-sm font-normal"
+    )%>
+  </div>
+</div>
+

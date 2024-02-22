@@ -7,8 +7,10 @@ ruby '3.2.2'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'iso_country_codes', '~> 0.7.8'
 gem 'jbuilder'
 gem 'jsbundling-rails'
+gem 'pagy', '~> 7.0', '>= 7.0.4'
 gem 'pg', '~> 1.1'
 gem 'premailer-rails', '~> 1.12'
 gem 'propshaft'
@@ -21,6 +23,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 3.2', '>= 3.2.3'
   gem 'letter_opener', '~> 1.8', '>= 1.8.1'
   gem 'pry'
   gem 'rails-controller-testing'

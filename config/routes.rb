@@ -16,4 +16,7 @@ Rails.application.routes.draw do
     patch 'change_password', to: 'passwords#update'
     resources :password_resets, only: %i[new create edit update]
   end
+
+  resources :listings, except: :index
+  resource :my_listings, only: :show
 end

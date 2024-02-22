@@ -98,6 +98,8 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     htmlentities (4.3.4)
@@ -105,6 +107,7 @@ GEM
       concurrent-ruby (~> 1.0)
     i18n-debug (1.2.0)
       i18n (< 2)
+    iso_country_codes (0.7.8)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -144,6 +147,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    pagy (7.0.4)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -297,10 +301,13 @@ DEPENDENCIES
   capybara (~> 3.39, >= 3.39.2)
   cssbundling-rails
   factory_bot_rails (~> 6.2)
+  faker (~> 3.2, >= 3.2.3)
   i18n-debug
+  iso_country_codes (~> 0.7.8)
   jbuilder
   jsbundling-rails
   letter_opener (~> 1.8, >= 1.8.1)
+  pagy (~> 7.0, >= 7.0.4)
   pg (~> 1.1)
   premailer-rails (~> 1.12)
   propshaft

@@ -1,0 +1,6 @@
+en:
+  feed:
+    show:
+      title: Home
+      welcome: Welcome to Kibe Pasal
+      welcome_with_name: Welcome to Kibe Pasal, %{name}

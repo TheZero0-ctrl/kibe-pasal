@@ -1,0 +1,70 @@
+<%= content_for :title, @listing.title %>
+<div class="m-auto flex flex-col items-center mt-10 md:mt-40">
+  <div class="ml-auto grid grid-cols-1 justify-center md:grid-cols-1 lg:grid-cols-3 w-[80%]">
+    <div class="col-span-1 md:col-span-1 lg:col-span-2">
+      <div class="mb-3">
+        <h1 class="inline-block text-2xl font-bold">
+          <%= @listing.title %>
+        </h1>
+        <%= link_to t(".edit"), edit_listing_path(@listing), class: "text-blue-500 ml-3" %>
+      </div>
+      <%= render "tags", listing: @listing %>
+
+      <div class="grid grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div class="bg-white rounded-md shadow-md p-5 mt-6">
+          <dl>
+            <dt class="text-gray-600">
+              <%= t(".posted_by") %>
+            </dt>
+            <dd class="font-semibold text-lg">
+              <%= @listing.creator.name %>
+            </dd>
+          </dl>
+
+          <div class="mt-6 flex">
+            <%= button_to "#", class: "px-4 py-2 bg-gray-200 text-gray-800 rounded-md mr-3 flex items-center gap-2" do %>
+              <%= svg("heart", class: "w-4 h-4", fill: "#111827") %>
+              <%= t(".save") %>
+            <% end %>
+
+            <%= link_to "#", class: "px-4 py-2 bg-blue-500 text-white rounded-md flex items-center gap-2" do %>
+              <%= svg("message", class: "w-4 h-4", fill: "white") %>
+              <%= t(".contact") %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-md shadow-md p-5 mt-6 flex justify-between">
+          <div>
+            <dl>
+              <dt class="text-gray-600">
+                <%= Listing.human_attribute_name(:price) %>
+              </dt>
+              <dd class="font-semibold text-lg">
+                <%= "#{@listing.price} NRS" %>
+              </dd>
+            </dl>
+            <dl>
+              <dt class="text-gray-600">
+                <%= Listing.human_attribute_name(:condition) %>
+              </dt>
+              <dd class="font-semibold text-lg">
+                <%= @listing.human_enum_value(:condition) %>
+              </dd>
+            </dl>
+          </div>
+          <div>
+            <dl>
+              <dt class="text-gray-600">
+                <%= t(".location") %>
+              </dt>
+              <dd class="font-semibold text-lg">
+                <%= @listing.address.redacted %>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
   <nav 
-    class="mt-6 relative max-w-[85rem] w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto"
+    class="mt-6 bg-gray-200 relative max-w-[85rem] w-full border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto"
     aria-label="Global"
     data-controller="navbar"
   >
@@ -26,7 +26,7 @@
       data-navbar-target="menu"
     >
       <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
-        <%= link_to t(".create_add"), "#", class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" %>
+        <%= link_to t(".create_add"), new_listing_path, class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" %>
         <%= link_to t(".message"), "#", class: "font-medium text-gray-500 hover:text-gray-400 md:py-6" if logged_in? %>
         <% if logged_in? %>
           <div class="hs-dropdown md:py-4">
@@ -38,7 +38,7 @@
             <% end %>
             <div class="hidden navbar-dropdown peer-hover:block hover:block transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms]  md:w-48 z-10 bg-white md:shadow-md rounded-lg p-2 absolute top-[60%] md:border left-[85%]">
               <%= link_to t(".profile"), profile_path, class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
-              <%= link_to t(".my_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
+              <%= link_to t(".my_adds"), my_listings_path, class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".saved_adds"), "#", class: "flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500" %>
               <%= link_to t(".logout"), 
                 logout_path, 
