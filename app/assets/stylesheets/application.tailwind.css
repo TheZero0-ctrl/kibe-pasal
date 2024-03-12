@@ -81,3 +81,7 @@
 .pagy-combo-nav-js .page.next.disabled {
   @apply text-gray-400 cursor-default;
 }
+
+figure.image img {
+  object-fit: cover !important;
+}
