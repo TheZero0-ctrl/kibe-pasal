@@ -7,7 +7,11 @@ class Listing < ApplicationRecord
   belongs_to :creator, class_name: 'User'
   belongs_to :organization
 
-  scope :feed, -> { order(created_at: :desc).includes(:address) }
+  has_one_attached :cover_photo
+
+  scope :feed, lambda {
+    order(created_at: :desc).includes(:address).with_attached_cover_photo
+  }
 
   enum condition: {
     brand_new: 'brand_new',
@@ -20,6 +24,7 @@ class Listing < ApplicationRecord
   validates :price, numericality: { only_integer: true }
   validates :condition, presence: true
   validates :tags, length: { in: 1..5 }
+  validates :cover_photo, presence: true
 
   before_save :downcase_tags
 

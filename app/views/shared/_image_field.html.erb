@@ -1,0 +1,57 @@
+<%= tag.image_upload_field(
+  data: {
+    controller: "image-upload",
+    image_upload_blob_url_template_value: rails_service_blob_url(":signed_id", ":filename"),
+  }
+) do %>
+  <div class="flex items-center justify-center bg-gray-100 p-4 rounded-lg">
+    <label class="relative cursor-pointer" data-image-upload-target="cta">
+      <%= form.file_field(
+            nil,
+            id: nil,
+            class: "opacity-0",
+            accept: "image/*",
+            direct_upload: true,
+            required: true,
+            data: {
+              action: "image-upload#upload",
+              image_upload_target: "fileInput"
+            }
+      ) %>
+      <%= form.hidden_field(
+            attribute,
+            value: form.object.cover_photo&.signed_id,
+            data: {
+              image_upload_target: "hiddenInput"
+            }
+      ) %>
+
+
+      <div class="flex flex-col items-center justify-center text-center">
+        <%= svg "upload", class: "w-12 h-12" %>
+        <span class="text-sm font-medium text-gray-600">
+          <%= label %>
+        </span>
+      </div>
+    </label>
+  </div>
+  <figure class="relative">
+    <% url = form.object.cover_photo.present? ? url_for(form.object.cover_photo) : "" %>
+    <%= image_tag(url, data: { image_upload_target: "preview" }) %>
+  </figure>
+  <progress value="0" max="100" class="w-full bg-blue-500" data-image-upload-target="progress">
+  </progress>
+  <%= tag.div(
+      class: "flex justify-center hidden mt-3",
+      data: { image_upload_target: "remove" }
+    ) do %>
+    <%= tag.button(
+          class: "px-4 py-2 bg-red-500 text-white rounded-md",
+          type: "button",
+          data: { action: "image-upload#remove" }
+        ) do %>
+      <%= t(".remove_image") %>
+    <% end %>
+  <% end %>
+
+<% end %>

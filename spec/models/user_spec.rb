@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of(:name) }
 
     it { is_expected.to validate_length_of(:password).is_at_least(8) }
-    it { is_expected.to validate_length_of(:password).is_at_most(max_length) }
+    it { is_expected.to validate_length_of(:password).is_at_most(max_length).with_message('is too long') }
 
     it 'email should be uniq' do
       create(:user)
