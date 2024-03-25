@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./actiontext.css";
 
 .error-text {
   color: #dc2626;
@@ -84,4 +85,8 @@
 
 figure.image img {
   object-fit: cover !important;
+}
+
+trix-editor {
+  min-height: 90%;
 }
