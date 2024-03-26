@@ -1,4 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require_relative 'rspec_screenshot_helper_patch'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -8,6 +9,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rails'
 require 'timecop'
+require 'action_text/system_test_helper'
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -66,6 +68,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include AuthenticationHelper, type: :request
   config.include AuthenticationHelper, type: :system
+  config.include RspecScreenshotHelperPatch, type: :system
+  config.include ActionText::SystemTestHelper, type: :system
 end
 
 Shoulda::Matchers.configure do |config|

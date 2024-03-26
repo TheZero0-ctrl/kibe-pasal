@@ -17,7 +17,8 @@ RSpec.describe 'ListingsController', type: :request do
           tags: %w[Electronics],
           condition: 'brand_new',
           address_attributes: build(:address).attributes,
-          cover_photo: fixture_file_upload(Rails.root.join('spec/support/files/test-image-1.jpg'))
+          cover_photo: fixture_file_upload(Rails.root.join('spec/support/files/test-image-1.jpg')),
+          description: "This is a description of the product. It's a great product."
         }
       }
     end

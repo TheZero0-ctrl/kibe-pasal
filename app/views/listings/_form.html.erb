@@ -4,6 +4,10 @@
       <%= form.label :title, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
       <%= form.text_field :title, class: "rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" %>
     </div>
+    <div class="block relative mb-14"> 
+      <%= form.label :description, class: "block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2" %>
+      <%= form.rich_text_area :description, class: "mb-4"%>
+    </div>
     <%= render \
         "shared/image_field",
         form: form,

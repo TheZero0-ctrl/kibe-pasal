@@ -13,5 +13,6 @@ FactoryBot.define do
     cover_photo do
       File.open(Rails.root.join("spec/support/files/test-image-#{index}.jpg"))
     end
+    description { Faker::Lorem.paragraph }
   end
 end
